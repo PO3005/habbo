@@ -1,0 +1,37 @@
+2024-07-10T17:20:19.905 - [org.alexdev.http.HavanaWeb] - HavanaWeb by Quackster
+2024-07-10T17:20:19.905 - [org.alexdev.http.HavanaWeb] - Loading configuration..
+2024-07-10T17:20:19.913 - [org.alexdev.havana.dao.Storage] - Connecting to MySQL server
+2024-07-10T17:20:19.934 - [com.zaxxer.hikari.HikariDataSource] - processing - Starting...
+2024-07-10T17:20:20.028 - [com.zaxxer.hikari.pool.HikariPool] - processing - Exception during pool initialization.
+java.sql.SQLInvalidAuthorizationSpecException: Access denied for user 'root'@'localhost' (using password: YES)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:232)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:165)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1199)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:560)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:174)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:92)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at org.alexdev.havana.dao.Storage.<init>(Storage.java:51)
+	at org.alexdev.havana.dao.Storage.connect(Storage.java:72)
+	at org.alexdev.http.HavanaWeb.main(HavanaWeb.java:68)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+Current charset is UTF-8. If password has been set using other charset, consider using option 'passwordCharacterEncoding'
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authentication(AbstractConnectProtocol.java:931)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.handleConnectionPhases(AbstractConnectProtocol.java:850)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connect(AbstractConnectProtocol.java:507)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1195)
+	... 13 more
+2024-07-10T17:33:18.358 - [org.alexdev.http.HavanaWeb] - HavanaWeb by Quackster
+2024-07-10T17:33:18.358 - [org.alexdev.http.HavanaWeb] - Loading configuration..
+2024-07-10T17:33:18.370 - [org.alexdev.havana.dao.Storage] - Connecting to MySQL server
+2024-07-10T17:33:18.411 - [com.zaxxer.hikari.HikariDataSource] - processing - Starting...
+2024-07-10T17:33:18.493 - [com.zaxxer.hikari.HikariDataSource] - processing - Start completed.
+2024-07-10T17:33:18.595 - [org.alexdev.http.HavanaWeb] - Registering web routes..
+2024-07-10T17:33:18.661 - [org.alexdev.http.HavanaWeb] - Registered 251 route(s)!
+2024-07-10T17:33:18.661 - [org.alexdev.http.HavanaWeb] - Starting http service on port 80

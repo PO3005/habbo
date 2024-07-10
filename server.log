@@ -1,0 +1,39 @@
+2024-07-10T17:20:24.760 - [org.alexdev.havana.Havana] - Havana - Habbo Hotel V31 Emulation
+2024-07-10T17:20:24.761 - [org.alexdev.havana.dao.Storage] - Connecting to MySQL server
+2024-07-10T17:20:24.786 - [com.zaxxer.hikari.HikariDataSource] - processing - Starting...
+2024-07-10T17:20:24.846 - [com.zaxxer.hikari.pool.HikariPool] - processing - Exception during pool initialization.
+java.sql.SQLInvalidAuthorizationSpecException: Access denied for user 'root'@'localhost' (using password: YES)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:232)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:165)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1199)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:560)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:174)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:92)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at org.alexdev.havana.dao.Storage.<init>(Storage.java:51)
+	at org.alexdev.havana.dao.Storage.connect(Storage.java:72)
+	at org.alexdev.havana.Havana.main(Havana.java:90)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+Current charset is UTF-8. If password has been set using other charset, consider using option 'passwordCharacterEncoding'
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authentication(AbstractConnectProtocol.java:931)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.handleConnectionPhases(AbstractConnectProtocol.java:850)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connect(AbstractConnectProtocol.java:507)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1195)
+	... 13 more
+2024-07-10T17:20:24.851 - [org.alexdev.havana.dao.Storage] - Could not connect
+2024-07-10T17:33:10.180 - [org.alexdev.havana.Havana] - Havana - Habbo Hotel V31 Emulation
+2024-07-10T17:33:10.181 - [org.alexdev.havana.dao.Storage] - Connecting to MySQL server
+2024-07-10T17:33:10.203 - [com.zaxxer.hikari.HikariDataSource] - processing - Starting...
+2024-07-10T17:33:10.279 - [com.zaxxer.hikari.HikariDataSource] - processing - Start completed.
+2024-07-10T17:33:10.279 - [org.alexdev.havana.dao.Storage] - Connection to MySQL was a success
+2024-07-10T17:33:10.296 - [org.alexdev.havana.Havana] - Setting up game
+2024-07-10T17:33:10.471 - [org.alexdev.havana.game.commands.CommandManager] - Loaded 39 commands
+2024-07-10T17:33:11.301 - [org.alexdev.havana.server.rcon.RconServer] - RCON (remote connection) is listening on 127.0.0.1:12309
+2024-07-10T17:33:11.316 - [org.alexdev.havana.server.mus.MusServer] - Multi User Server (MUS) is listening on 127.0.0.1:12322
+2024-07-10T17:33:11.323 - [org.alexdev.havana.server.netty.NettyServer] - Shockwave game server is listening on 127.0.0.1:12321
